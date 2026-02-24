@@ -1,0 +1,180 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f0f14;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 120px 0;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  background: #d4a017;
+  color: #0f0f14;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    background: #e6b923;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #d4a017;
+  color: #d4a017;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #d4a017;
+    color: #0f0f14;
+  }
+}
+
+// Header
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 15, 20, 0.94);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s;
+  cursor: pointer;
+
+  &.scrolled {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+  }
+
+  .logo {
+    height: 52px;
+  }
+
+  nav {
+    display: flex;
+    gap: 36px;
+
+    a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &.active {
+        color: #d4a017;
+      }
+
+      &:hover {
+        color: #d4a017;
+      }
+    }
+  }
+}
+
+// Hero
+.hero {
+  height: 100vh;
+  min-height: 780px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+
+  &-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(15,15,20,0.3), rgba(15,15,20,0.85) 80%);
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 9vw, 6.4rem);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 400;
+    margin-bottom: 32px;
+    opacity: 0.92;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Другие секции — общий стиль заголовков
+.section-title {
+  text-align: center;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  margin-bottom: 80px;
+  color: white;
+}
+
