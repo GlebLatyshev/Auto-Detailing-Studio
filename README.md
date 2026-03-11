@@ -1,77 +1,149 @@
-<<<<<<< HEAD
+# Premium Detailing Vladivostok 
 
-=======
-# React + TypeScript + Vite
+Профессиональный детейлинг-центр во Владивостоке. Современный лендинг для премиального автосервиса с полным спектром услуг по уходу за автомобилями.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+##  Особенности проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Современный дизайн** — тёмная тема с акцентным золотым цветом (#d4a017)
+- **Адаптивная вёрстка** — корректное отображение на всех устройствах
+- **Видео-фон** — замедленное видео (0.5x) процесса мойки в hero-секции
+- **Форма обратной связи** — интеграция с EmailJS для отправки заявок
+- **Фотогалерея "До/После"** — наглядная демонстрация результатов
+- **Плавная навигация** — скролл к секциям с помощью react-scroll
 
-## React Compiler
+##  Технологический стек
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 18** — библиотека для пользовательских интерфейсов
+- **TypeScript** — типизация для надёжности кода
+- **Vite** — быстрая сборка и разработка
+- **SCSS** — стилизация с препроцессором
+- **React Hook Form + Yup** — валидация форм
+- **EmailJS** — отправка заявок без бэкенда
+- **React Icons** — иконки для интерфейса
+- **React Scroll** — плавная навигация по якорям
 
-## Expanding the ESLint configuration
+## 📁 Структура проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+BIBKA/
+├── public/ # Статические файлы
+├── src/
+│ ├── assets/
+│ │ ├── images/ # Изображения
+│ │ │ ├── reviews/ # Фото клиентов
+│ │ │ ├── rezultati/ # Фото "До/После"
+│ │ │ └── services/ # Фото услуг
+│ │ ├── video/ # Видео для фона
+│ │ └── shield-logo.svg # Логотип
+│ ├── components/ # React-компоненты
+│ │ ├── About.tsx # О нас (преимущества)
+│ │ ├── BeforeAfter.tsx # Галерея "До/После"
+│ │ ├── Contacts.tsx # Контакты + форма
+│ │ ├── Footer.tsx # Подвал
+│ │ ├── Header.tsx # Шапка с навигацией
+│ │ ├── Hero.tsx # Главный экран с видео
+│ │ ├── Process.tsx # Этапы работы
+│ │ ├── Reviews.tsx # Отзывы клиентов
+│ │ └── Services.tsx # Услуги
+│ ├── styles/
+│ │ └── global.scss # Глобальные стили
+│ ├── App.tsx # Главный компонент
+│ ├── main.tsx # Точка входа
+│ └── vite-env.d.ts # Типы для Vite
+├── .env # Переменные окружения
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔧 Установка и запуск
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Клонировать репозиторий**
+   ```bash
+   git clone https://github.com/yourusername/premium-detailing.git
+   cd premium-detailing
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    Установить зависимости
+    bash
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
->>>>>>> 46c2613 (первый ком)
+    Настроить переменные окружения
+
+    Создайте файл .env в корне проекта:
+    env
+
+    VITE_EMAILJS_SERVICE_ID=your_service_id
+    VITE_EMAILJS_TEMPLATE_ID=your_template_id
+    VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
+        Получить эти данные можно на emailjs.com
+
+    Запустить в режиме разработки
+    bash
+
+    npm run dev
+
+   
+
+📱 Основные компоненты
+Hero
+
+    Замедленное видео процесса мойки (0.5x)
+
+    Градиентный оверлей для читаемости текста
+
+    Кнопки призыва к действию
+
+Services
+
+    Карточки услуг с изображениями
+
+    Адаптивная сетка
+
+BeforeAfter
+
+    Сравнение "До/После" для разных автомобилей
+
+    Пометки с указанием статуса
+
+    Подписи с описанием работ
+
+Contacts
+
+    Валидация формы (react-hook-form + yup)
+
+    Интеграция с EmailJS
+
+    Google Maps с меткой студии
+
+    Адаптивная карта
+
+🎨 Цветовая схема
+
+    Основной фон: #0f0f14, #0a0a0e
+
+    Карточки: #111, #1a1a1f
+
+    Акцент: #d4a017 (золотой)
+
+    Текст: #e0e0e0
+
+    Границы: #222, #2a2a2f
+
+📞 Контакты
+
+    Адрес: г. Владивосток, ул. Острякова, 49
+
+    Телефон: +7 (950) 284-36-39
+
+    Режим работы: Ежедневно 09:00–21:00
+
+    Социальные сети:
+
+        Instagram
+
+        Telegram
+
+        VK
